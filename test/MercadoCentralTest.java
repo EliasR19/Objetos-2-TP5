@@ -9,7 +9,7 @@ public class MercadoCentralTest {
 	
 	@Nested
 	class ProductoCooperativaTest{
-		///aa
+
 		Caja c = new Caja(1);
 		ProductoCooperativa p1 = new ProductoCooperativa("Leche", 100, 3);
 

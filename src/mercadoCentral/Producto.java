@@ -1,6 +1,6 @@
 package mercadoCentral;
 
-public abstract class Producto {
+public abstract class Producto implements Cobrable{
 	private double precio;
 	private int stock;
 	private String name;
@@ -19,7 +19,8 @@ public abstract class Producto {
 		stock = stock--;
 	}
 
-	public double getPrecio() {
+	public double cobrar() {
+		this.registrar();
 		return precio - (precio * this.iva()) / 100;
 	}
 	

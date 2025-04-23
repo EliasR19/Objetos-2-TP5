@@ -11,7 +11,7 @@ public class ProductoCooperativa extends Producto{
 	public int iva() {
 		return 10;
 	}
-	
-	
+
+
 	
 }

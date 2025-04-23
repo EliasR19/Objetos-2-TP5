@@ -5,20 +5,19 @@ import java.util.List;
 
 public class Caja {
 	int numCaja;
-	private List<Producto> productosCliente = new ArrayList<Producto>();
+	private List<Cobrable> productosCliente = new ArrayList<Cobrable>();
 	private double totalPagar = 0;
 	
 	public Caja(int numCaja) {
 		this.numCaja = numCaja;
 	}
 	
-	public void registrarProducto(Producto p) {
-		productosCliente.add(p);
-		p.registrar();
-		totalPagar = totalPagar + p.getPrecio();
+	public void registrarProducto(Cobrable c) {
+		productosCliente.add(c);
+		totalPagar = totalPagar + c.cobrar();
 	}
 	
 	public double montoTotalPagar() {
-		return productosCliente.stream().mapToDouble(Producto::getPrecio).reduce(0.0, (p1,p2) -> p1+p2);
+		return productosCliente.stream().mapToDouble(Cobrable::cobrar).reduce(0.0, (p1,p2) -> p1+p2);
 	}
 }
