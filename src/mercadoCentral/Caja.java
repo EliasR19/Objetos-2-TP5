@@ -19,6 +19,10 @@ public class Caja {
 	}
 	
 	public double montoTotalPagar() {
-		return comprasCliente.stream().mapToDouble(Cobrable::getPrecio).reduce(0.0, (p1,p2) -> p1+p2);
+		return comprasCliente.stream().mapToDouble(Cobrable::getPrecio).reduce(0.0, (c1,c2) -> c1+c2);
+	}
+	
+	public List<Cobrable> getComptaClientes(){
+		return comprasCliente;
 	}
 }

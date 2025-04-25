@@ -16,8 +16,9 @@ public abstract class Producto implements Cobrable{
 	}
 
 	public void sacarStock() {
-		stock = stock--;
+		stock--;
 	}
+	
 //
 //	public double cobrar() {
 //		this.registrar();

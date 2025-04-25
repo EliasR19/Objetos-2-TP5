@@ -47,7 +47,32 @@ public class MercadoCentralTest {
 		public void montoTotalCooperativaTest() {
 			assertEquals(240, c.montoTotalPagar(), 0.1);
 		}
+		
+	}
+	
+	@Nested
+	class TestStock{
+		Caja c = new Caja(1);
+		ProductoCooperativa p1 = new ProductoCooperativa("Leche", 100, 5);
+		ProductoEmpresaTradicional p2 = new ProductoEmpresaTradicional("Arroz", 150, 3);
 
+		@BeforeEach
+		public void setUp() {
+			
+			c.registrarProducto(p1);
+			c.registrarProducto(p2);
+	
+		}
+		
+		@Test
+		public void stockTest() {
+			assertEquals(4, p1.getStock());
+			assertEquals(2, p2.getStock());
+			
+			c.registrarProducto(p1);
+			assertEquals(3, p1.getStock());
+		}
+		
 	}
 	
 	

@@ -20,7 +20,7 @@ public class main {
 		c.registrarProducto(luz);
 		
 		System.out.println(p1.getStock());
-		
+
 		
 		System.out.println(recaudador.getRecaudado());
 		System.out.println(c.montoTotalPagar());
