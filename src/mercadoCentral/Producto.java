@@ -18,13 +18,17 @@ public abstract class Producto implements Cobrable{
 	public void sacarStock() {
 		stock = stock--;
 	}
-
-	public double cobrar() {
-		this.registrar();
-		return precio - (precio * this.iva()) / 100;
-	}
+//
+//	public double cobrar() {
+//		this.registrar();
+//		return precio - (precio * this.iva()) / 100;
+//	}
 	
 	public abstract int iva();
+	
+	public double getPrecio() {
+		return precio - (precio * this.iva()) / 100;
+	}
 	
 	public int getStock() {
 		return stock;

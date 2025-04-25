@@ -12,13 +12,17 @@ public abstract class Factura implements Cobrable{
 	}
 	
 	@Override
-	public double cobrar() {
+	public void registrar() {
 		this.notificarAgencia(agencia);
-		return this.getPrecio();
 	}
 	
-	
-	protected abstract double getPrecio();
+//	@Override
+//	public double cobrar() {
+//		this.notificarAgencia(agencia);
+//		return this.getPrecio();
+//	}	
+//	
+	public abstract double getPrecio();
 
 
 	public void notificarAgencia(Agencia a) {
@@ -28,6 +32,8 @@ public abstract class Factura implements Cobrable{
 	public double getMonto() {
 		return monto;
 	}
+	
+	
 	
 }	
 
